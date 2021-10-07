@@ -21,7 +21,7 @@ public class Doofus_Script : MonoBehaviour
         playerMovement();
         if(isdead)
         {
-            PlayerDied();
+            StartCoroutine( PlayerDied());
         }
     }
     void playerMovement()
