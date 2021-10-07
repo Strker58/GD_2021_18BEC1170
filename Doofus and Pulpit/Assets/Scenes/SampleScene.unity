@@ -1060,6 +1060,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b696017005755c46b7e266de585e359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubes:
+  - {fileID: 217458456}
+  - {fileID: 678902511}
+  - {fileID: 810420881}
+  - {fileID: 240261256}
+  - {fileID: 58165624}
+  - {fileID: 846826859}
+  - {fileID: 2019207866}
+  - {fileID: 1286468448}
+  - {fileID: 722014744}
 --- !u!1 &1286468448
 GameObject:
   m_ObjectHideFlags: 0
