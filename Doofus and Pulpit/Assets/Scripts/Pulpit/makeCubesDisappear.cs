@@ -26,7 +26,7 @@ public class makeCubesDisappear : MonoBehaviour
     IEnumerator Spawn()
     {
        yield return new WaitForSeconds(pulpit_spawn_time);
-        Instantiate(reference, new Vector3(possiblepossitionsx[Random.Range(0,2)],0, possiblepossitionsz[Random.Range(0,2)]), Quaternion.identity);
+        Instantiate(reference, new Vector3(possiblepossitionsx[Random.Range(0,3)],0, possiblepossitionsz[Random.Range(0,3)]), Quaternion.identity);
         count++;
     }
     private void OnTriggerEnter2D(Collider2D target)
