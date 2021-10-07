@@ -7,8 +7,8 @@ public class makeCubesDisappear : MonoBehaviour
     public float min_pulpit_destroy_time = 4f;
     public float max_pulpit_destroy_time = 5f;
     public float pulpit_spawn_time = 2.5f;
-    public float[] possiblepossitionsx = {0f, -1.003f, 1.003f};
-    public float[] possiblepossitionsz = { 0f, -1.008f, 1.008f };
+    public float[] possiblepossitionsx = { -10f,  0f,  10f};
+    public float[] possiblepossitionsz = { -10f, 0f,  10f };
     public GameObject reference;
     private int possiblecube = 2;
     private int count=0;
@@ -26,7 +26,7 @@ public class makeCubesDisappear : MonoBehaviour
     IEnumerator Spawn()
     {
        yield return new WaitForSeconds(pulpit_spawn_time);
-        Instantiate(reference, new Vector3(possiblepossitionsx[Random.Range(0,2)], transform.position.y, possiblepossitionsz[Random.Range(0,2)]), Quaternion.identity);
+        Instantiate(reference, new Vector3(possiblepossitionsx[Random.Range(0,2)],0, possiblepossitionsz[Random.Range(0,2)]), Quaternion.identity);
         count++;
     }
     private void OnTriggerEnter2D(Collider2D target)
