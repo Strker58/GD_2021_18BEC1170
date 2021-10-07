@@ -21,13 +21,13 @@ public class makeCubesDisappear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (count < 2) StartCoroutine(Spawn());
+        if (count < possiblecube) StartCoroutine(Spawn());
         else StartCoroutine(destroyed());
     }
     IEnumerator Spawn()
     {
        yield return new WaitForSeconds(pulpit_spawn_time);
-        Instantiate(reference, new Vector3(Random.Range(), transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(reference, new Vector3(possiblepossitionsx[Random.Range(0,2)], transform.position.y, possiblepossitionsz[Random.Range(0,2)]), Quaternion.identity);
         count++;
     }
     private void OnTriggerEnter2D(Collider2D target)

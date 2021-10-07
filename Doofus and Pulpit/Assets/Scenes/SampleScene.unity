@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 1150700998}
   m_Layer: 0
   m_Name: Pulpit
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,6 +401,14 @@ MonoBehaviour:
   min_pulpit_destroy_time: 4
   max_pulpit_destroy_time: 5
   pulpit_spawn_time: 2.5
+  possiblepossitionsx:
+  - 0
+  - -1.003
+  - 1.003
+  possiblepossitionsz:
+  - 0
+  - -1.008
+  - 1.008
   reference: {fileID: 217458456}
 --- !u!65 &1150700998
 BoxCollider:
@@ -595,10 +603,6 @@ PrefabInstance:
     - target: {fileID: 872118003515667862, guid: b32fa3a6b93bb394a8414f16fde3db46, type: 3}
       propertyPath: m_Name
       value: Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 872118003515667862, guid: b32fa3a6b93bb394a8414f16fde3db46, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b32fa3a6b93bb394a8414f16fde3db46, type: 3}
