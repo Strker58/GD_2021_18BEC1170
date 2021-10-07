@@ -19,10 +19,9 @@ public class makeCubesDisappear : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (count < possiblecube) StartCoroutine(Spawn());
-        else StartCoroutine(destroyed());
     }
     IEnumerator Spawn()
     {
@@ -34,7 +33,7 @@ public class makeCubesDisappear : MonoBehaviour
     {
         if (target.tag == "Ground")
         {
-            destroyed();
+            StartCoroutine(destroyed());
             target.gameObject.SetActive(false);
             count--;
         }
