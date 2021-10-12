@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Ground_checker : MonoBehaviour
 {
+    public Text Score_UI;
+    private int Score=0;
     // Update is called once per frame
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision target) 
     {
-        if (collision.gameObject.tag == "Ground") GameObject.Find("Player_Score").GetComponent<UI_Script>().score++;
+        print("Collision Detected");
+        if (target.gameObject.tag == "Ground")
+        {
+            Score++;
+            Score_UI.text = "Score: " + Score;
+        }
+        
     }
 }

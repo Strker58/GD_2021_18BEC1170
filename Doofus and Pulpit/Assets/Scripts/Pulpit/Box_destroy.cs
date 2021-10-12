@@ -7,7 +7,7 @@ public class Box_destroy : MonoBehaviour
     public float min_pulpit_destroy_time = 4f;
     public float max_pulpit_destroy_time = 5f;
     // Start is called before the first frame update
-    void Update()
+    void FixedUpdate()
     {
         StartCoroutine(destroyed());
     }
