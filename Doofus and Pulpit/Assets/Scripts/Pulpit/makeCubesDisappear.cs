@@ -34,16 +34,9 @@ public class makeCubesDisappear : MonoBehaviour
     }
     void CubeSpawning()
     {
-        if(valx==1 && valy==1)
-            Instantiate(reference, new Vector3(possiblepossitionsx[valx], 0, possiblepossitionsz[valy]), Quaternion.identity);
-        else if(valx==0 && valy!=0)
-            Instantiate(reference, new Vector3(possiblepossitionsx[valx+1], 0, possiblepossitionsz[valy]), Quaternion.identity);
-        else if(valx!=0 && valy==0)
-            Instantiate(reference, new Vector3(possiblepossitionsx[valx], 0, possiblepossitionsz[valy+1]), Quaternion.identity);
-        else 
-            Instantiate(reference, new Vector3(possiblepossitionsx[valx], 0, possiblepossitionsz[1]), Quaternion.identity);
         valx = Random.Range(0, 3);
         valy = Random.Range(0, 3);
+        Instantiate(reference, new Vector3(possiblepossitionsx[valx], 0, possiblepossitionsz[valy]), Quaternion.identity);
     }
     
 }

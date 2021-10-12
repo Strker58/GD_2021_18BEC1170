@@ -15,6 +15,5 @@ public class Ground_checker : MonoBehaviour
             Score++;
             Score_UI.text = "Score: " + Score;
         }
-        
     }
 }

@@ -14,7 +14,7 @@ public class Box_destroy : MonoBehaviour
     IEnumerator destroyed()
     {
         yield return new WaitForSeconds(Random.Range(min_pulpit_destroy_time, max_pulpit_destroy_time));
-        Destroy(gameObject);
         GameObject.Find("Pulpit").GetComponent<makeCubesDisappear>().count--;
+        Destroy(gameObject);
     }
 }
