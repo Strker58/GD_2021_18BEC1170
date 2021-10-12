@@ -7,8 +7,6 @@ public class Doofus_Script : MonoBehaviour
 {
     public float speed = 8f;
     private Rigidbody playerBody;
-    private bool isdead=false;
-    private bool isGround = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,38 +14,23 @@ public class Doofus_Script : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         playerMovement();
-        if(isdead)
+        if(gameObject.transform.position.y<-2)
         {
-            StartCoroutine( PlayerDied());
+            StartCoroutine(PlayerDied());
         }
     }
     void playerMovement()
     {
-        if (isGround)
+        if (Input.GetAxisRaw("Vertical") > 0.5 || Input.GetAxisRaw("Vertical") < -0.5)
         {
-            if (Input.GetAxisRaw("Vertical") > 0.5 || Input.GetAxisRaw("Vertical") < -0.5)
-            {
-                playerBody.velocity += transform.forward * speed * Input.GetAxisRaw("Vertical");
-            }
-            if (Input.GetAxisRaw("Horizontal") > 0.5 || Input.GetAxisRaw("Horizontal") < -0.5)
-            {
-
-                playerBody.velocity += transform.right * speed * Input.GetAxisRaw("Horizontal");
-            }
+            playerBody.velocity += transform.forward * speed * Input.GetAxisRaw("Vertical");
         }
-    }
-    private void OnCollisionEnter(Collision target)
-    {
-        if (target.gameObject.tag == "Dead")
+        if (Input.GetAxisRaw("Horizontal") > 0.5 || Input.GetAxisRaw("Horizontal") < -0.5)
         {
-            isdead = true;
-        }
-        if(target.gameObject.tag=="Ground")
-        {
-            isGround = true;
+            playerBody.velocity += transform.right * speed * Input.GetAxisRaw("Horizontal");
         }
     }
     IEnumerator PlayerDied()
